@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="/pomodoro.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="pomodoro.css">
 </head>
 <body>
     <div id="nav-menu">TOP BAR</div>
     <div id="bg-timer">
         <h1>POMODORO</h1>
-        <p id="jam">
-            00:00
-        </p>
-        <button>Pause</button>
+        <div>
+            <div id="jam">
+                00:00
+            </div>
+            <button id="increase" onclick="tambah()">Increase</button>
+            <button id="decrease">Decrease</button>
+        </div>
+        <button onclick="pause()">Pause</button>
+        <button>Start/Resume</button>
+        <button>Restart</button>
     </div>
     <div id="focus-list">FOCUS LIST</div>
+    <script src="pomodoro.js"></script>
 </body>
 </html>
