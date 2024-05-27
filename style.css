@@ -57,7 +57,7 @@ header {
     transform-origin: right; /* uat set effectnya itu */
 }
 
-.navigation a:hover::after {  /* abis selesai hove */
+.navigation a:hover::after {  /* abis selesai hover */
     transform: scaleX(1);
     transform-origin: left;
 }   
