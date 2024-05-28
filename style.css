@@ -7,7 +7,7 @@
     font-family: 'Inter';
 }
 
-body {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +57,7 @@ header {
     transform-origin: right; /* uat set effectnya itu */
 }
 
-.navigation a:hover::after {  /* abis selesai hover */
+.navigation a:hover::after {  /* abis selesai hove */
     transform: scaleX(1);
     transform-origin: left;
 }   
@@ -85,10 +85,10 @@ header {
     width: 400px;
     height: 440px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 20px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,3 +259,5 @@ header {
     text-align: center;
     margin: 50px 0 10px;
 }
+
+/* calendar styles */
