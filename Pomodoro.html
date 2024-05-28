@@ -8,23 +8,34 @@
 
 </head>
 <body>
+  <header>
+    <h2 class="logo">Logo</h2>
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="calender.html">Calender</a>
+        <a href="#"">Pomodoro Timer</a>
+        <a href="analysis.html">Weekly Analysis</a>
+        <button class="btnLogin-popup">Link Account</button>
+    </nav>
+  </header>
 
   <div class="timer-container">
     <div class="timer">00:00</div>
     <div class="controls">
-      <button id="increase">Increase</button>
-      <button id="decrease">Decrease</button>
+      <button class="btn-icon" id="increase"><ion-icon name="caret-up-outline"></ion-icon></button>
+      <button class="btn-icon" id="decrease"><ion-icon name="caret-down-outline"></ion-icon></button>
     </div>
   </div>
-  <div>
-    KEEP YOUT FOCUS UP!
+  <div class="text">
+    KEEP YOUR FOCUS UP!
   </div>
   <div class="controls2">
-    <button id="start" >Start</button>
-    <button id="stop" disabled>Stop</button>
-    <button id="clear">Clear</button>
+    <button class="btn-control" id="start" >Start</button>
+    <button class="btn-control" id="stop" disabled>Stop</button>
+    <button class="btn-control" id="clear">Clear</button>
   </div>
-
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="pomodoro.js"></script>
 </body>
 </html>
