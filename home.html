@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WFC</title>
-    <link rel="stylesheet" href="WFC.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <div class="header-bar">
         <h2 class="logo">TOAD</h2>
         <nav class="navigation">
-            <a href="home.html">Home</a>
+            <a href="#">Home</a>
             <a href="calendar.html">Calendar</a>
             <a href="Pomodoro/Pomodoro.html"">Pomodoro Timer</a>
             <a href="analysis.html">Weekly Analysis</a>
-            <a href="#">WFC Recommendations</a>
+            <a href="WFC.html">WFC Recommendations</a>
         </nav>
     </div>
+
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-Do List <img src="images/icon.png" alt=""></h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add a new task">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+            </ul>
+        </div>
+    </div>
     
-    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.468502472548!2d106.77967977499014!3d-6.201758493785974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6dcc7d2c4ad%3A0x209cb1eef39be168!2sBINUS%20University%2C%20Kampus%20BINUS%20Anggrek!5e0!3m2!1sen!2sid!4v1716881410360!5m2!1sen!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
-    <script src="WFC.js" ></script>
+    <script src="home.js" ></script>
 </body>
 </html>
