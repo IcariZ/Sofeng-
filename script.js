@@ -19,3 +19,13 @@ btnPopUp.addEventListener('click', ()=> {
 iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 });
+
+
+const passwordInput = document.getElementById("reg_password");
+const confirmPasswordInput = document.getElementById("conf_password");
+form.addEventListener("submit", function (event) {
+    if (passwordInput.value !== confirmPasswordInput.value) {
+        event.preventDefault();
+        alert("Passwords do not match!");
+    }
+});
