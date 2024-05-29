@@ -20,15 +20,14 @@ iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 });
 
+let checkPassword = document.getElementById("reg_password").value;
+    let checkConfPassword = document.getElementById("conf_password").value;
+    console.log(checkPassword);
+    // console.log(checkPassword);
 
-const passwordInput = document.getElementById("reg_password");
-const confirmPasswordInput = document.getElementById("conf_password");
-console.log(passwordInput, confirmPasswordInput);
 
-form.addEventListener("submit", function (event) {
-    // console.log("p");
-    if (passwordInput.value !== confirmPasswordInput.value) {
-        event.preventDefault();
-        alert("Passwords do not match!");
-    }
-});
+// function checkPassword(){
+//     let checkPassword = document.getElementById("reg_password").value;
+//     let checkConfPassword = document.getElementById("conf_password").value;
+//     console.log(checkPassword, checkConfPassword);
+// }
