@@ -23,7 +23,10 @@ iconClose.addEventListener('click', ()=> {
 
 const passwordInput = document.getElementById("reg_password");
 const confirmPasswordInput = document.getElementById("conf_password");
+console.log(passwordInput, confirmPasswordInput);
+
 form.addEventListener("submit", function (event) {
+    // console.log("p");
     if (passwordInput.value !== confirmPasswordInput.value) {
         event.preventDefault();
         alert("Passwords do not match!");
