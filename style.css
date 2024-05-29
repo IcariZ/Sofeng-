@@ -32,8 +32,8 @@ header {
 .logo {
     font-family: 'Poppins';
     font-size: 2.2em;
-    font-weight: 1000;
-    /* color: #000; */
+    font-weight: 900;
+    color: #6e413d;
     user-select: none;
     letter-spacing: 4px;
 }
