@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 * {
     margin: 0;
@@ -10,20 +9,26 @@
 
 body {
     display: flex;
-    align-items: center;
-    padding: 0 10px;
-    justify-content: center;
-    min-height: 100vh;
-    background: #F2E0D4;   
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* min-height: 100vh; */
+    background-color: #F2E0D4;
 }
 
-.header-bar {
+h3{
+    font-size: 25px;
+}
+
+
+
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    /* background: #D9AAA0; */
+    background: #caced1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,14 +36,14 @@ body {
 }
 
 .logo {
-    font-family: 'Poppins';
-    font-size: 2.2em;
-    font-weight: 900;
-    color: #6e413d;
+    font-size: 2em;
+    color: #000;
     user-select: none;
-    letter-spacing: 4px;
 }
 
+.navigation {
+    padding: 13px;
+}
 
 .navigation a {
     position: relative;
@@ -47,6 +52,7 @@ body {
     text-decoration: none;     /* biar gada underline */
     font-weight: 500;       /* ini kea bold gitu */
     margin-left: 40px;
+    padding: auto;
 }
 
 .navigation a::after {
@@ -63,70 +69,86 @@ body {
     transform-origin: right; /* uat set effectnya itu */
 }
 
-.navigation a:hover::after {  /* abis selesai hove */
+.navigation a:hover::after {  /* abis selesai hover */
     transform: scaleX(1);
-    transform-origin: left;
-}  
+    transform-origin: left;
+}
+
+.navigation button{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;     /* biar gada underline */
+    font-weight: 500;       /* ini kea bold gitu */
+    margin-left: 40px;
+    background-color: grey;
+}
+
+.box{
+    text-align: center;
+    font-weight: 700;
+    line-height: 30px;
+    display: inline-block;
+    padding: 5%;
+    background-color: #D9AAA0;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.weekly{
+    width: 100%;
+    text-align: center;
+    min-height: 30vh;
+    font-size: 17px;
+}
 
 .container{
+    width:100%;
+    background-color: #D9AAA0;
+    padding-bottom: 80px;
+}
+
+.toDoApp{
     width: 100%;
-    min-width: 100vh;
-    /* background: linear-gradient(135deg, #153677, #4e085f); */
-    padding: 10px;
-}
-
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #fff;
-    margin: 100px auto 20px; 
-    padding: 40px 30px 70px; 
-    /* margin & padding = top, left-right, bottom; */
-    border-radius: 10px;
-}
-
-/* margins for title "To Do List" */
-.todo-app h2{
-    color: #002765;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* buat margins for image */
-.todo-app h2 img{
-    width: 30px;
-    margin-left: 10px;
+    text-align: center;
+    padding: 15px;
 }
 
 .row{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #edeef0;
+    background: #edeef0;
     border-radius: 30px;
     padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 input{
-    flex: 1;
+    flex:1;
     border: none;
     outline: none;
     background: transparent;
     padding: 10px;
+    font-size: 18px;
     font-weight: 14px;
+    cursor: text;
 }
 
 button{
     border: none;
     outline: none;
-    padding: 16px 50px; /*top-bottom , left-right */
-    background: #D9AAA0;
+    padding: 16px 50px;
+    background: #caced1;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
+    margin-right: 10px;
 }
 
 ul li{
@@ -135,7 +157,8 @@ ul li{
     padding: 12px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
-    position: relative;     /* karena ul li bawah ini dibikin absolute */
+    position: relative;
+    color:black;
 }
 
 ul li::before{
@@ -144,20 +167,15 @@ ul li::before{
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(/images/unchecked.png);
+    background-image: url(images/unchecked.png);
     background-size: cover;
     background-position: center;
     top: 12px;
     left: 8px;
 }
 
-ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-}
-
 ul li.checked::before{
-    background-image: url(/images/checked.png);
+    background-image: url(images/checked.png);
 }
 
 ul li span{
@@ -174,5 +192,5 @@ ul li span{
 }
 
 ul li span:hover{
-    background: #eae9e9;
+    background: #c21b1b;
 }
