@@ -31,7 +31,7 @@ iconClose.addEventListener('click', ()=> {
 function signup(e){
     event.preventDefault();
 
-    var email = document.getElementById('email').value;
+    var email = document.getElementById('new_email').value;
     console.log(email)
 
     var pass = document.getElementById('reg_password').value;
@@ -43,7 +43,7 @@ function signup(e){
     };
 
     var json = JSON.stringify(user);
-    localStorage.setItem(username, json);
+    localStorage.setItem(email, json);
     console.log('user added');
 
 }
