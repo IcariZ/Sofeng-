@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
-
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,9 @@ body {
 
 h3{
     font-size: 25px;
+    color: #6e413d;
 }
+
 
 
 
@@ -28,7 +30,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background: #caced1;
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,13 +38,18 @@ header {
 }
 
 .logo {
-    font-size: 2em;
-    color: #000;
+    font-family: 'Poppins';
+    font-size: 2.2em;
+    font-weight: 900;
+    color: #6e413d;
     user-select: none;
+    letter-spacing: 4px;
 }
 
-.navigation {
-    padding: 13px;
+.currentPage{
+    background-color: #D9AAA0;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 .navigation a {
@@ -52,7 +59,7 @@ header {
     text-decoration: none;     /* biar gada underline */
     font-weight: 500;       /* ini kea bold gitu */
     margin-left: 40px;
-    padding: auto;
+    color: #6e413d;
 }
 
 .navigation a::after {
@@ -71,22 +78,13 @@ header {
 
 .navigation a:hover::after {  /* abis selesai hover */
     transform: scaleX(1);
-    transform-origin: left;
-}
-
-.navigation button{
-    position: relative;
-    font-size: 1.1em;
-    color: white;
-    text-decoration: none;     /* biar gada underline */
-    font-weight: 500;       /* ini kea bold gitu */
-    margin-left: 40px;
-    background-color: grey;
-}
+    transform-origin: left;
+}   
 
 .box{
     text-align: center;
     font-weight: 700;
+    color: #6e413d;
     line-height: 30px;
     display: inline-block;
     padding: 5%;
@@ -101,17 +99,22 @@ header {
     text-align: center;
     min-height: 30vh;
     font-size: 17px;
+    color: #6e413d;
 }
 
 .container{
-    width:100%;
+    width:80%;
     background-color: #D9AAA0;
+    border-radius: 1rem;
     padding-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .toDoApp{
     width: 100%;
     text-align: center;
+    color: #6e413d;
     padding: 15px;
 }
 
@@ -126,6 +129,7 @@ header {
     padding-bottom: 5px;
     margin-bottom: 25px;
     margin-top: 25px;
+    color: #6e413d;
 }
 
 input{
@@ -144,21 +148,26 @@ button{
     outline: none;
     padding: 16px 50px;
     background: #caced1;
-    color: #fff;
+    color: black;
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
     margin-right: 10px;
 }
 
+button:hover{
+    opacity: 75%;
+}
+
 ul li{
+    margin-left: 10px;
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
-    color:black;
+    color: #6e413d;
 }
 
 ul li::before{
@@ -172,10 +181,18 @@ ul li::before{
     background-position: center;
     top: 12px;
     left: 8px;
+    transition: 0.5s;
+}
+
+ul li.checked{
+    color: rgba(255, 255, 255, 0.858);
+    text-decoration: line-through;
+    transition: 0.5s;
 }
 
 ul li.checked::before{
     background-image: url(/images/checked.png);
+    transition: 0.5s;
 }
 
 ul li span{
@@ -189,6 +206,7 @@ ul li span{
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
+    margin-right: 15px;
 }
 
 ul li span:hover{
