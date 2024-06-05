@@ -32,10 +32,7 @@ function signup(e){
     event.preventDefault();
 
     var email = document.getElementById('new_email').value;
-    console.log(email)
-
     var pass = document.getElementById('reg_password').value;
-    console.log(pass)
     
     var user = {
         email: email,
@@ -53,20 +50,16 @@ function loginFunc(e){
     event.preventDefault();
 
     var email = document.getElementById('email').value;
-    console.log(email)
     var pass = document.getElementById('password').value;
-    console.log(pass)
     var result = document.getElementById('result');
 
     var user = localStorage.getItem(email);
     var data = JSON.parse(user);
-    console.log(data);
 
     if (user == null){
         result.innerHTML = 'Oops! Invalid crendetials! Try again.';
     } else if (email == data.email && pass == data.password){
-        // result.innerHTML = 'logged in!';
-        window.location.href = 'logged.html';
+        window.location.href = '/Home/home.html';
     } else {
         result.innerHTML = 'Oops! Invalid crendetials! Try again.';
     }
