@@ -30,25 +30,34 @@ function increaseTime() {
 }
 
 function startTimer() {
-  
   if (intervalId) return; // Prevent multiple timers
 
-  
+  decreaseButton.disabled = true;
+  increaseButton.disabled = true;
 
   intervalId = setInterval(() => {
-    seconds--;
-    if (seconds < 0) {
-      seconds = 59;
-      minutes--;
-    }
-
     if (minutes === 0 && seconds === 0) {
       clearInterval(intervalId);
       alert('Time is up!');
+      decreaseButton.disabled = false;
+      increaseButton.disabled = false;
+      return;
+    }
+
+    if (seconds === 0) {
+      if (minutes > 0) {
+        minutes--;
+        seconds = 59;
+      } else {
+        seconds = 0;
+      }
+    } else {
+      seconds--;
     }
 
     updateTimerDisplay();
   }, 1000); // Update every second
+
   startButton.style.display = "none";
   stopButton.style.display = "";
 }
@@ -58,6 +67,10 @@ function stopTimer() {
     clearInterval(intervalId);
     intervalId = null;
   }
+
+  decreaseButton.disabled = false;
+  increaseButton.disabled = false;
+
   startButton.style.display = "";
   stopButton.style.display = "none";
 }
