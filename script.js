@@ -45,7 +45,7 @@ function signup(e){
     var json = JSON.stringify(user);
     localStorage.setItem(email, json);
     console.log('user added');
-
+    post_register.innerHTML = 'Register Succesful!';
 }
 
 function loginFunc(e){
@@ -65,7 +65,8 @@ function loginFunc(e){
     if (user == null){
         result.innerHTML = 'Oops! Invalid crendetials! Try again.';
     } else if (email == data.email && pass == data.password){
-        result.innerHTML = 'logged in!';
+        // result.innerHTML = 'logged in!';
+        window.location.href = 'logged.html';
     } else {
         result.innerHTML = 'Oops! Invalid crendetials! Try again.';
     }
