@@ -46,7 +46,6 @@ function signup(e){
 }
 
 function loginFunc(e){
-    console.log("in");
     event.preventDefault();
 
     var email = document.getElementById('email').value;
