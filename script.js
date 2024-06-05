@@ -20,14 +20,47 @@ iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 });
 
-let checkPassword = document.getElementById("reg_password").value;
-    let checkConfPassword = document.getElementById("conf_password").value;
-    console.log(checkPassword);
-    // console.log(checkPassword);
+// console.log("dor")
 
+function signup(e){
+    event.preventDefault();
 
-// function checkPassword(){
-//     let checkPassword = document.getElementById("reg_password").value;
-//     let checkConfPassword = document.getElementById("conf_password").value;
-//     console.log(checkPassword, checkConfPassword);
-// }
+    var email = document.getElementById('email').value;
+    var username = document.getElementById('username').value;
+    var pass = document.getElementById('reg_password').value;
+    
+    var user = {
+        email: email,
+        username: username,
+        password: pass,
+    };
+
+    var json = JSON.stringify(user);
+    localStorage.setItem(username, json);
+    console.log('user added');
+
+}
+
+function loginFunc(e){
+    console.log("in");
+    event.preventDefault();
+
+    var username = document.getElementById('username').value;
+    console.log(username)
+    var pass = document.getElementById('password').value;
+    console.log(pass)
+    var result = document.getElementById('result');
+
+    var user = localStorage.getItem(username);
+    var data = JSON.parse(user);
+    console.log(data);
+
+    if (user == null){
+        result.innerHTML = 'Oops! Invalid crendetials! Try again.';
+    } else if (username == data.username && pass == data.password){
+        result.innerHTML = 'logged in!';
+    } else {
+        result.innerHTML = 'Oops! Invalid crendetials! Try again.';
+    }
+
+}
