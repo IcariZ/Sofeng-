@@ -7,7 +7,7 @@
     box-sizing: border-box;
     font-family: 'Inter';
 }
-
+  
 body {
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    /* background: #D9AAA0; */
+    background: #D9AAA0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,6 +95,19 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.place-cards button
+{
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+button:hover .place-card
+{
+    font-size: 1.2em;
 }
 
 .place-card {
@@ -109,4 +122,58 @@ main {
     font-weight: bold;
     border-radius: 5px;
     margin: 10px;
+    transition: font-size 0.2s ease;
 }
+
+.list-box1
+{
+    position: relative;
+    margin-top: 100px;
+    display: none;
+}
+
+.x-butt-place
+{
+    text-align: end;
+}
+
+.list-cafe
+{
+    background-color: #96A1C0;
+    position: relative;
+    width: 1000px;
+    height: 100vh;
+    border-radius: 6%;
+}
+
+.text-box
+{
+    background-color: #D9AAA0;
+    transform: translate(10%,10%);
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 2%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.card
+{
+    background-color: #d99882;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.card img
+{
+    height: 130px;
+    width: 90px;
+}
+
+.card-body
+{
+    margin-left: 40px;
+    text-align: start;
+}
+
