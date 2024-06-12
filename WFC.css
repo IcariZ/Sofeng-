@@ -78,6 +78,11 @@ main {
     border-radius: 10px;
 }
 
+.place-cards a
+{
+    text-decoration: none;
+    color: inherit;
+}
 
 .places h1 {
     margin-bottom: 30px;
@@ -132,11 +137,26 @@ button:hover .place-card
     display: none;
 }
 
+.list-box2
+{
+    position: relative;
+    margin-top: 100px;
+    display: none;
+}
+
 .x-butt-place
 {
     text-align: end;
+    padding-top: 60px;
+    padding-right: 90px;
 }
 
+.x-butt
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+}
 .list-cafe
 {
     background-color: #96A1C0;
@@ -149,7 +169,7 @@ button:hover .place-card
 .text-box
 {
     background-color: #D9AAA0;
-    transform: translate(10%,10%);
+    transform: translate(10%,4%);
     width: 80%;
     height: 80%;
     padding: 20px;
@@ -177,3 +197,26 @@ button:hover .place-card
     text-align: start;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f5f5f5; 
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
