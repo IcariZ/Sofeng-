@@ -14,7 +14,7 @@ body {
     background-color: #F2E0D4;
     align-items: center;
     justify-content: center;
-    padding-top: 100px; /* Account for fixed header */
+    padding-top: 100px; 
 }
 
 header {
