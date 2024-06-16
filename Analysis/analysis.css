@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2E0D4;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-family: 'Poppins';
+    font-size: 2.2em;
+    font-weight: 900;
+    color: #6e413d;
+    user-select: none;
+    letter-spacing: 4px;
+}
+
+.currentPage{
+    background-color: #F2E0D4;
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #000;
+    text-decoration: none;     /* biar gada underline */
+    font-weight: 500;       /* ini kea bold gitu */
+    margin-left: 40px;
+    color: #6e413d;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0px; 
+    bottom: -10px;
+    width: 100%;    /* biar width underlinenya sama kea wordnya */
+    height: 3px;
+    background: #D9AAA0;
+    border-radius: 5px;
+    transform: scaleX(0);  /* ada underline dibawah nav, matiin biar kliatan */
+    transition: transform .5s;
+    transform-origin: right; /* uat set effectnya itu */
+}
+
+.navigation a:hover::after {  /* abis selesai hover */
+    transform: scaleX(1);
+    transform-origin: left;
+}   
+
+.navigation a.currentPage {
+    font-weight: 700;
+}
+
+.navigation a.currentPage::after {
+    content: none;
+}

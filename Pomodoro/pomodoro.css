@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   padding: 20px 100px;
-  /* background: #D9AAA0; */
+  background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,6 +23,13 @@
   letter-spacing: 4px;
 }
 
+.currentPage{
+  background-color: #F2E0D4;
+  color: black;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
 .navigation a {
   position: relative;
   font-size: 1.1em;
@@ -30,6 +37,7 @@
   text-decoration: none;     /* biar gada underline */
   font-weight: 500;       /* ini kea bold gitu */
   margin-left: 40px;
+  color: #6e413d;
 }
 
 .navigation a::after {
@@ -46,10 +54,18 @@
   transform-origin: right; /* uat set effectnya itu */
 }
 
-.navigation a:hover::after {  /* abis selesai hove */
+.navigation a:hover::after {  /* abis selesai hover */
   transform: scaleX(1);
   transform-origin: left;
-}  
+}   
+
+.navigation a.currentPage {
+  font-weight: 700;
+}
+
+.navigation a.currentPage::after {
+  content: none;
+}
 
 * {
   margin: 0;
@@ -67,10 +83,10 @@ body {
   background-color: #F2E0D4;
 }
 
-.allin
-{
-  background-color: #D9D9D9; 
+.allin {
+  background-color: #D9AAA0;
   padding: 20px;
+  border-radius: 1rem; /* Adjust the value as needed for the desired roundness */
 }
 
 .timer-container {

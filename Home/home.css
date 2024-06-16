@@ -22,8 +22,6 @@ h3{
 }
 
 
-
-
 header {
     position: fixed;
     top: 0;
@@ -47,7 +45,8 @@ header {
 }
 
 .currentPage{
-    background-color: #D9AAA0;
+    background-color: #F2E0D4;
+    color: black;
     border-radius: 1rem;
     padding: 1rem;
 }
@@ -80,6 +79,14 @@ header {
     transform: scaleX(1);
     transform-origin: left;
 }   
+
+.navigation a.currentPage {
+    font-weight: 700;
+}
+
+.navigation a.currentPage::after {
+    content: none;
+}
 
 .box{
     text-align: center;
