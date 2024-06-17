@@ -122,5 +122,5 @@ function updateCounts() {
 showTasks();
 
 function login(){
-    window.location.href = '/Analysis/analysis.html';
+    window.location.href = '/index.html';
 }

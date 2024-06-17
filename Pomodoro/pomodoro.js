@@ -89,3 +89,7 @@ clearButton.addEventListener('click', clearTimer);
 increaseButton.addEventListener('click', increaseTime);
 
 updateTimerDisplay(); // Set initial display
+
+function login(){
+  window.location.href = '/index.html';
+}

@@ -23,3 +23,6 @@ jaksel.addEventListener("click", ()=>
     option.style.display = "block";
 });
 
+function login(){
+    window.location.href = '/index.html';
+}

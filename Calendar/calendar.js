@@ -55,3 +55,7 @@ prevNextIcon.forEach(icon => {
         renderCalendar();
     });
 });
+
+function login(){
+    window.location.href = '/index.html';
+}

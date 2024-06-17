@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +7,9 @@
     font-family: 'Inter';
 }
 
-body{
+body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -22,7 +22,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    /* background: #D9AAA0; */
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +38,13 @@ header {
     letter-spacing: 4px;
 }
 
+.currentPage{
+    background-color: #F2E0D4;
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
 .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -45,6 +52,7 @@ header {
     text-decoration: none;     /* biar gada underline */
     font-weight: 500;       /* ini kea bold gitu */
     margin-left: 40px;
+    color: #6e413d;
 }
 
 .navigation a::after {
@@ -61,7 +69,7 @@ header {
     transform-origin: right; /* uat set effectnya itu */
 }
 
-.navigation a:hover::after {  /* abis selesai hove */
+.navigation a:hover::after {  /* abis selesai hover */
     transform: scaleX(1);
     transform-origin: left;
 }   
@@ -79,9 +87,136 @@ header {
 }
 
 .navigation .btnLogin-popup:hover {
+    position: relative;
     background: #D9AAA0;
     color: #001;
     border: #D9AAA0;
+}
+
+.navigation a.currentPage {
+    font-weight: 700;
+}
+
+.navigation a.currentPage::after {
+    content: none;
+}
+
+
+#eyeIconElement, #reg_eyeIconElement, #confirm_eyeIconElement {
+    cursor: pointer;
+}
+
+.form-box h3 {
+    font-size: 1.5em;
+    color: #6e413d;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #6e413d;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #6e413d;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+/* ini biar nanti tulisan email pass naik klo mau ngetik */
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #6e413d;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #6e413d;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #71788B;
+    font-weight: 500;
+    margin: 35px 0 -30px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #6e413d;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #71788B;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* login button */
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #71788B;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #D9AAA0;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #71788B;
+    text-align: center;
+    font-weight: 500;
+    margin: 45px 0 10px;
+}
+
+.login-register p a {
+    color: #5784FF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.login-link {
+    color: #71788B;
+    text-align: center;
+    margin: 50px 0 10px;
 }
 
 .wrapper {
@@ -101,8 +236,20 @@ header {
     transition: transform .5s ease, height .2s ease;
 }
 
-.wrapper.active-popup {
-    transform: scale(1);
+.wrapper {
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(1); 
+    transition: transform .5s ease, height .2s ease;
 }
 
 .wrapper.active {
@@ -120,7 +267,7 @@ header {
     transform: translateX(0);
 }
 
-.wrapper.wrapper.active .form-box.login {
+.wrapper.active .form-box.login {
     transition: none;
     transform: translateX(-400px);
 }
@@ -158,7 +305,7 @@ header {
 
 .form-box h2 {
     font-size: 2em;
-    color: #162938;
+    color: #6e413d;
     text-align: center;
 }
 
@@ -166,7 +313,7 @@ header {
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid #162938;
+    border-bottom: 2px solid #6e413d;
     margin: 30px 0;
 }
 
@@ -176,7 +323,7 @@ header {
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #162938;
+    color: #6e413d;
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
@@ -195,7 +342,7 @@ header {
     border: none;
     outline: none;
     font-size: 1em;
-    color: #162938;
+    color: #6e413d;
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -204,7 +351,7 @@ header {
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: #162938;
+    color: #6e413d;
     line-height: 57px;
 }
 
@@ -218,7 +365,7 @@ header {
 }
 
 .remember-forgot label input {
-    accent-color: #162938;
+    accent-color: #6e413d;
     margin-right: 3px;
 }
 
@@ -266,97 +413,4 @@ header {
     color: #71788B;
     text-align: center;
     margin: 50px 0 10px;
-}
-
-.container{
-    width: 100%;
-    min-width: 100vh;
-    /* background: linear-gradient(135deg, #153677, #4e085f); */
-    padding: 10px;
-}
-
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #fff;
-    margin: 100px auto 20px; 
-    padding: 40px 30px 70px; 
-    /* margin & padding = top, left-right, bottom; */
-    border-radius: 10px;
-}
-
-/* margins for title "To Do List" */
-.todo-app h2{
-    color: #002765;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* buat margins for image */
-.todo-app h2 img{
-    width: 30px;
-    margin-left: 10px;
-}
-
-.row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #edeef0;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
-}
-
-input{
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-    font-weight: 14px;
-}
-
-ul li{
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;     /* karena ul li bawah ini dibikin absolute */
-}
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image: url(images/unchecked.png);
-    background-size: cover;
-    background-position: center;
-    top: 12px;
-    left: 8px;
-}
-ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-}
-ul li.checked::before{
-    background-image: url(images/checked.png);
-}
-ul li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-}
-ul li span:hover{
-    background: #eae9e9;
 }

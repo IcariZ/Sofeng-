@@ -82,6 +82,24 @@ header {
     content: none; 
 }
 
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #D9AAA0;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 40px;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #D9AAA0;
+    color: #001;
+    border: #D9AAA0;
+}
+
 main {
     width: 90%;
     max-width: 1200px;

@@ -79,6 +79,25 @@ header {
     transform-origin: left;
 }   
 
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #D9AAA0;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 40px;
+}
+
+.navigation .btnLogin-popup:hover {
+    position: relative;
+    background: #D9AAA0;
+    color: #001;
+    border: #D9AAA0;
+}
+
 .navigation a.currentPage {
     font-weight: 700;
 }
@@ -103,6 +122,48 @@ header {
     background: #D9AAA0;
     color: #001;
     border: #D9AAA0;
+}
+
+/* buat todo */
+.container{
+    width: 100%;
+    min-width: 100vh;
+    /* background: linear-gradient(135deg, #153677, #4e085f); */
+    padding: 10px;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px; 
+    padding: 40px 30px 70px; 
+    /* margin & padding = top, left-right, bottom; */
+    border-radius: 10px;
+}
+
+/* margins for title "To Do List" */
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* buat margins for image */
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
 }
 
 .box{
@@ -161,18 +222,7 @@ header {
     font-weight: bold;
 }
 
-input{
-    flex:1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 14px;
-    cursor: text;
-}
-
-button{
+.addButton{
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -184,9 +234,21 @@ button{
     margin-right: 10px;
 }
 
-button:hover{
+.addButton:hover{
     opacity: 75%;
 }
+
+input{
+    flex:1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 14px;
+    cursor: text;
+}
+
 
 ul li{
     margin-left: 10px;

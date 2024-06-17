@@ -11,48 +11,21 @@
     <header>
         <h2 class="logo">toroo</h2>
         <nav class="navigation">
-            <a href="/Home/home.html">Home</a>
+            <a href="/Home/home.html"">Home</a>
             <a href="/Calendar/calendar.html">Calendar</a>
-            <a href="/Pomodoro/Pomodoro.html">Pomodoro Timer</a>
+            <a href="/Pomodoro/pomodoro.html">Pomodoro Timer</a>
             <a href="/Analysis/analysis.html">Weekly Analysis</a>
             <a href="/WFC/WFC.html">WFC Recommendations</a>
             <button class="btnLogin-popup">Link Account</button>
         </nav>
     </header>
 
-    <div class="weekly">
-        <div class="box" id="completed">
-            <p>Completed</p>
-            <p id="completedCount">0</p>
-        </div>
-        <div class="box" id="inProgress">
-            <p>In Progress</p>
-            <p id="inProgressCount">0</p>
-        </div>
-        <div class="box" id="overdue">
-            <p>Overdue</p>
-            <p id="overdueCount">0</p>
-        </div>
-    </div>
-    <br><br><br><br>
 
-    <div class="container">
-        <div class="toDoApp">
-            <h3>To Do List</h3>
-            <div class="row">
-                <input type="text" id="inputBox" placeholder="Add New Task">
-                <input type="date" id="deadline" placeholder="Add Deadline">
-                <button onclick="addTask()">Add</button>
-            </div>
-        </div>
-        <ul id="listContainer"></ul>
-    </div>
-
-    <div class="wrapper">
+    <div class="wrapper active">
         <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
         <!-- login section -->
         <div class="form-box login">
-            <h2>Welcome!</h2>
+            <h3>Welcome Back!</h3>
             <form onsubmit="loginFunc()">
                 <div class="input-box">
                     <input type="email" name="email" id="email" placeholder="Email" required> <br>
@@ -79,7 +52,7 @@
         </div>
         <!-- registration section -->
         <div class="form-box register">
-            <h2>Registration</h2>
+            <h3>Hello there!</h3>
             <form onsubmit="signup()">
                 <div class="input-box">
                     <!-- <span class="icon"><ion-icon name="mail"></ion-icon></span> -->
@@ -155,13 +128,6 @@
                 confirm_eyeIconElement.setAttribute("name", "eye-off-outline");
             }
         }
-
-        // login form submission
-        // function checkPassword(){
-        //     let checkPassword = document.getElementById("reg_password").value;
-        //     let checkConfPassword = document.getElementById("conf_password").value;
-        //     console.log(checkPassword, checkConfPassword);
-        // }
     </script>
 </body>
 </html>
