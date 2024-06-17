@@ -87,8 +87,6 @@ function showTasks() {
     updateCounts();
 }
 
-
-
 function updateCounts() {
     const tasks = listContainer.querySelectorAll('li');
     const completedCount = document.getElementById('completedCount');
@@ -122,3 +120,7 @@ function updateCounts() {
 }
 
 showTasks();
+
+function login(){
+    window.location.href = '/Analysis/analysis.html';
+}

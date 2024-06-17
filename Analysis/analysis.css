@@ -69,17 +69,17 @@ header {
     transform-origin: right; /* Set effect origin */
 }
 
-.navigation a:hover::after { /* On hover */
+.navigation a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
 .navigation a.currentPage {
-    font-weight: 700; /* Bolder weight for current page */
+    font-weight: 700;
 }
 
 .navigation a.currentPage::after {
-    content: none; /* Remove after pseudo-element */
+    content: none; 
 }
 
 main {

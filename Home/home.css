@@ -10,9 +10,9 @@
 body {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* min-height: 100vh; */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-color: #F2E0D4;
 }
 
@@ -85,6 +85,24 @@ header {
 
 .navigation a.currentPage::after {
     content: none;
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #D9AAA0;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 40px;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #D9AAA0;
+    color: #001;
+    border: #D9AAA0;
 }
 
 .box{
@@ -226,3 +244,4 @@ ul li span{
 ul li span:hover{
     background: #c21b1b;
 }
+
