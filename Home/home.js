@@ -54,21 +54,40 @@ function saveData() {
 function showTasks() {
     const tasks = JSON.parse(localStorage.getItem("tasks"));
     if (tasks) {
-        tasks.forEach(task => {
+        // asc deadline
+        tasks.sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+
+        // groupping completed tasks and non
+        const nonCompletedTasks = tasks.filter(task => task.status !== 'completed');
+        const completedTasks = tasks.filter(task => task.status === 'completed');
+
+        // display to do baru completed
+        const sortedTasks = [...nonCompletedTasks, ...completedTasks];
+
+        listContainer.innerHTML = '';
+
+        sortedTasks.forEach(task => {
             const li = document.createElement("li");
             li.id = task.id;
-            li.innerHTML = task.content;
+            li.innerHTML = `${task.content}`;
             li.dataset.status = task.status;
             li.dataset.timestamp = task.timestamp;
             li.dataset.deadline = task.deadline;
+
+            // display based on status
             if (task.status === 'completed') {
                 li.classList.add('checked');
+            } else if (task.status === 'overdue') {
+                li.classList.add('overdue');
             }
+
             listContainer.appendChild(li);
         });
     }
     updateCounts();
 }
+
+
 
 function updateCounts() {
     const tasks = listContainer.querySelectorAll('li');
