@@ -1,4 +1,5 @@
 const inputBox = document.getElementById("inputBox");
+const deadlineInput = document.getElementById("deadline");
 const listContainer = document.getElementById("listContainer");
 
 function addTask() {
@@ -8,9 +9,10 @@ function addTask() {
         const taskId = 'task-' + new Date().getTime();
         const li = document.createElement("li");
         li.id = taskId;
-        li.innerHTML = inputBox.value;
+        li.innerHTML = `${inputBox.value} - Due: ${deadlineInput.value}`;
         li.dataset.status = 'inProgress';
         li.dataset.timestamp = new Date().toISOString();
+        li.dataset.deadline = deadlineInput.value;
         listContainer.appendChild(li);
         const span = document.createElement("span");
         span.innerHTML = "\u00d7";
@@ -19,6 +21,7 @@ function addTask() {
         saveData();
     }
     inputBox.value = "";
+    deadlineInput.value = "";
 }
 
 listContainer.addEventListener("click", function(e) {
@@ -41,7 +44,8 @@ function saveData() {
             id: li.id,
             content: li.innerHTML,
             status: li.dataset.status,
-            timestamp: li.dataset.timestamp
+            timestamp: li.dataset.timestamp,
+            deadline: li.dataset.deadline
         });
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -56,6 +60,7 @@ function showTasks() {
             li.innerHTML = task.content;
             li.dataset.status = task.status;
             li.dataset.timestamp = task.timestamp;
+            li.dataset.deadline = task.deadline;
             if (task.status === 'completed') {
                 li.classList.add('checked');
             }
@@ -75,11 +80,18 @@ function updateCounts() {
     let inProgress = 0;
     let overdue = 0;
 
+    const today = new Date().toISOString().split('T')[0];
+
     tasks.forEach(task => {
         if (task.dataset.status === 'completed') {
             completed++;
         } else if (task.dataset.status === 'inProgress') {
             inProgress++;
+            if (task.dataset.deadline && task.dataset.deadline < today) {
+                task.dataset.status = 'overdue';
+                overdue++;
+                task.classList.add('overdue');
+            }
         } else if (task.dataset.status === 'overdue') {
             overdue++;
         }

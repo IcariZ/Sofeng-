@@ -21,7 +21,6 @@ h3{
     color: #6e413d;
 }
 
-
 header {
     position: fixed;
     top: 0;
@@ -110,7 +109,7 @@ header {
 }
 
 .container{
-    width:80%;
+    width:70%;
     background-color: #D9AAA0;
     border-radius: 1rem;
     padding-bottom: 80px;
@@ -137,6 +136,11 @@ header {
     margin-bottom: 25px;
     margin-top: 25px;
     color: #6e413d;
+}
+
+.overdue {
+    color: red;
+    font-weight: bold;
 }
 
 input{
@@ -175,6 +179,7 @@ ul li{
     cursor: pointer;
     position: relative;
     color: #6e413d;
+    font-weight: 600;
 }
 
 ul li::before{
@@ -195,6 +200,8 @@ ul li.checked{
     color: rgba(255, 255, 255, 0.858);
     text-decoration: line-through;
     transition: 0.5s;
+    font-weight: 500;
+    color: #F2E0D4;
 }
 
 ul li.checked::before{
