@@ -20,6 +20,33 @@
         </nav>
     </header>
 
+    <div class="weekly">
+        <div class="box" id="completed">
+            <p>Completed</p>
+            <p id="completedCount">0</p>
+        </div>
+        <div class="box" id="inProgress">
+            <p>In Progress</p>
+            <p id="inProgressCount">0</p>
+        </div>
+        <div class="box" id="overdue">
+            <p>Overdue</p>
+            <p id="overdueCount">0</p>
+        </div>
+    </div>
+    <br><br><br><br>
+
+    <div class="container">
+        <div class="toDoApp">
+            <h3>To Do List</h3>
+            <div class="row">
+                <input type="text" id="inputBox" placeholder="Add New Task">
+                <input type="date" id="deadline" placeholder="Add Deadline">
+                <button onclick="addTask()">Add</button>
+            </div>
+        </div>
+        <ul id="listContainer"></ul>
+    </div>
 
     <div class="wrapper">
         <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
@@ -79,6 +106,7 @@
                 </div>
             </form>
         </div>
+        
         
             
     </div>
