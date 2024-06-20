@@ -1,3 +1,15 @@
+function showAlert(event) {
+    event.preventDefault(); 
+    alert('Please Log In / Sign Up to access this page');
+}
+
+document.getElementById('home').addEventListener('click', showAlert);
+document.getElementById('calendar').addEventListener('click', showAlert);
+document.getElementById('pomodoro').addEventListener('click', showAlert);
+document.getElementById('weeklyAnalysis').addEventListener('click', showAlert);
+document.getElementById('recommendations').addEventListener('click', showAlert);
+
+
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
