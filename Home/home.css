@@ -21,7 +21,7 @@ h3{
     color: #6e413d;
 }
 
-header {
+.header-bar {
     position: fixed;
     top: 0;
     left: 0;
