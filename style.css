@@ -55,25 +55,6 @@ header {
     color: #6e413d;
 }
 
-.navigation a::after {
-    content: '';
-    position: absolute;
-    left: 0px; 
-    bottom: -10px;
-    width: 100%;    /* biar width underlinenya sama kea wordnya */
-    height: 3px;
-    background: #D9AAA0;
-    border-radius: 5px;
-    transform: scaleX(0);  /* ada underline dibawah nav, matiin biar kliatan */
-    transition: transform .5s;
-    transform-origin: right; /* uat set effectnya itu */
-}
-
-.navigation a:hover::after {  /* abis selesai hover */
-    transform: scaleX(1);
-    transform-origin: left;
-}   
-
 .navigation .btnLogin-popup {
     width: 130px;
     height: 50px;

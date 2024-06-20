@@ -19,9 +19,20 @@ function addTask() {
         li.appendChild(span);
         updateCounts();
         saveData();
+        
+        // for calendar
+        const task = {
+            id: taskId,
+            title: inputBox.value,
+            deadline: deadlineInput.value,
+            status: 'inProgress',
+            timestamp: new Date().toISOString()
+        };
+        saveTaskToLocal(task);
+
+        inputBox.value = "";
+        deadlineInput.value = "";
     }
-    inputBox.value = "";
-    deadlineInput.value = "";
 }
 
 listContainer.addEventListener("click", function(e) {
@@ -49,6 +60,12 @@ function saveData() {
         });
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function saveTaskToLocal(task) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 function showTasks() {

@@ -4,10 +4,28 @@ prevNextIcon = document.querySelectorAll(".icons span");
 
 // now date
 let date = new Date(),
-currYear = date.getFullYear(),
-currMonth = date.getMonth();
+    currYear = date.getFullYear(),
+    currMonth = date.getMonth();
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function getTasksFromLocal() {
+    return JSON.parse(localStorage.getItem('tasks')) || [];
+}
+
+function highlightTaskDates() {
+    let tasks = getTasksFromLocal();
+    let taskDates = tasks.map(task => task.deadline); 
+
+    daysTag.querySelectorAll('li').forEach(day => {
+        let dayNumber = parseInt(day.innerText);
+        let dayDate = new Date(currYear, currMonth, dayNumber);
+        let formattedDate = dayDate.toISOString().split('T')[0];
+        if (taskDates.includes(formattedDate)) {
+            day.classList.add('has-task'); // Add the highlight class
+        }
+    });
+}
 
 const renderCalendar = () => {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
@@ -22,13 +40,13 @@ const renderCalendar = () => {
         liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
     }
 
-    // today
+    // today and other days
     for (let i = 1; i <= lastDateofMonth; i++) {
         let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
             && currYear === new Date().getFullYear() ? "active" : "";
-        liTag += `<li class="${isToday}">${i}</li>`;
+            liTag += `<li class="${isToday}">${i}</li>`;
     }
-    
+
     // next days
     for (let i = lastDayofMonth; i < 6; i++){
         liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
@@ -36,7 +54,10 @@ const renderCalendar = () => {
 
     currentDate.innerText = `${months[currMonth]} ${currYear}`; 
     daysTag.innerHTML = liTag;
+
+    highlightTaskDates();
 }
+
 renderCalendar();
 
 prevNextIcon.forEach(icon => {
