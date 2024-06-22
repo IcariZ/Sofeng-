@@ -80,3 +80,12 @@ prevNextIcon.forEach(icon => {
 function login(){
     window.location.href = '/index.html';
 }
+
+const   todayBtn = document.querySelector(".today-btn");
+todayBtn.addEventListener("click", () => {
+    let date = new Date(),
+    currYear = date.getFullYear(),
+    currMonth = date.getMonth();
+    renderCalendar();
+});
+  

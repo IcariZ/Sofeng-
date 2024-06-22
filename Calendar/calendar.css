@@ -221,6 +221,7 @@ header .icons span:last-child {
     box-sizing: border-box;
 }
 
+
 .days li::before {
     position: absolute;
     content: "";
@@ -240,4 +241,32 @@ header .icons span:last-child {
 
 .days li.active::before {
     background: #F2E0D4;
+}
+
+.wrapper .today {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: var(--primary-clr);
+}
+
+.wrapper .today button {
+    width: 20%;
+    height: 30px;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-clr);
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--primary-clr);
+    color: #F2E0D4;
+    background-color: #6e413d;
+}
+
+.wrapper .today button:hover {
+    font-weight: 700;
+    color: #6e413d;
+    background-color: #F2E0D4;
 }
