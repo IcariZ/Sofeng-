@@ -10,7 +10,7 @@
         <?php
             $askLoginReg =  "<button class=\"btnLogin-popup\">Get Started!</button>";
             $out = "<button class=\"btnLogin-popup\" onclick=\"login()\">Log Out</button>";
-            echo (TRUE) ? $askLoginReg : $out;
+            echo (empty($_COOKIE['PHPSESSID'])) ? $askLoginReg : $out;
         ?>
     </nav>
 </header> 

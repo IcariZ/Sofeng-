@@ -1,9 +1,9 @@
 
-// document.getElementById('home').addEventListener('click', showAlert);
-// document.getElementById('calendar').addEventListener('click', showAlert);
-// document.getElementById('pomodoro').addEventListener('click', showAlert);
-// document.getElementById('weeklyAnalysis').addEventListener('click', showAlert);
-// document.getElementById('recommendations').addEventListener('click', showAlert);
+document.getElementById('home').addEventListener('click', showAlert);
+document.getElementById('calendar').addEventListener('click', showAlert);
+document.getElementById('pomodoro').addEventListener('click', showAlert);
+document.getElementById('weeklyAnalysis').addEventListener('click', showAlert);
+document.getElementById('recommendations').addEventListener('click', showAlert);
 
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
@@ -39,7 +39,7 @@ function obfuscateString(str) {
 }
 
 function signup(e) {
-    event.preventDefault();
+    // event.preventDefault();
 
     var email = document.getElementById('new_email').value;
     var pass = document.getElementById('reg_password').value;
@@ -55,23 +55,22 @@ function signup(e) {
     post_register.innerHTML = 'Register Succesful!';
 }
 
-function loginFunc(e) {
+function loginFunc() {
     event.preventDefault();
-
+    
     var email = document.getElementById('email').value;
     var pass = document.getElementById('password').value;
     var result = document.getElementById('result');
-
+    
     var user = localStorage.getItem(email);
     var data = JSON.parse(user);
+    document.cookie = "PHPSESSID=" + btoa(data.password);
 
-    document.cookie = obfuscateString(data);
     if (user == null) {
         result.innerHTML = 'Oops! Invalid crendetials! Try again.';
     } else if (email == data.email && pass == data.password) {
-        window.location.href = '/Home/home.html';
+        window.location.href = '/Home';
     } else {
         result.innerHTML = 'Oops! Invalid crendetials! Try again.';
     }
-
 }

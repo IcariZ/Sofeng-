@@ -1,7 +1,6 @@
 <?php
-// (!isset($_COOKIE['']) || empty($_COOKIE['']))
-// if (TRUE)
-// {
-//     header("Location: /");
-//     exit;
-// }
+if (!isset($_COOKIE['PHPSESSID']) || empty($_COOKIE['PHPSESSID']))
+{
+    header("Location: /");
+    exit;
+}
