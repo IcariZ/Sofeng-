@@ -11,6 +11,6 @@ $path = [
     '/Analysis' => 'analysis.php'
 ];
 
-require (array_key_exists($uri, $path)) ? $path[$uri] : notFound();
+require (array_key_exists($uri, $path)) ? $path[$uri] : "404.php";
 
 

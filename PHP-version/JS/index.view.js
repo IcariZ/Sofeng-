@@ -1,9 +1,9 @@
 
-document.getElementById('home').addEventListener('click', showAlert);
-document.getElementById('calendar').addEventListener('click', showAlert);
-document.getElementById('pomodoro').addEventListener('click', showAlert);
-document.getElementById('weeklyAnalysis').addEventListener('click', showAlert);
-document.getElementById('recommendations').addEventListener('click', showAlert);
+// document.getElementById('home').addEventListener('click', showAlert);
+// document.getElementById('calendar').addEventListener('click', showAlert);
+// document.getElementById('pomodoro').addEventListener('click', showAlert);
+// document.getElementById('weeklyAnalysis').addEventListener('click', showAlert);
+// document.getElementById('recommendations').addEventListener('click', showAlert);
 
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');

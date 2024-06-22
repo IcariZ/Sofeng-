@@ -13,6 +13,11 @@
   <?php require "Partial/nav.view.php";?>
   
   <div class="allin">
+    <div class="pick">
+      <a class="CD">Count-down</a>
+      <a class="Breaks">Breaks</a>
+    </div>
+    <div class="picked"></div>
     <div class="timer-container">
       <div class="timer">00:00</div>
       <div class="controls">
