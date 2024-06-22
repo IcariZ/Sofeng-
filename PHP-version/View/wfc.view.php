@@ -13,6 +13,7 @@
         <main>
             <section class="places">
                 <h1>Find Places</h1>
+
                 <div class="region">
                     <h2>Jakarta</h2>
                     <div class="place-cards">

@@ -22,9 +22,10 @@ main {
 }
 
 .places {
-    background-color: #d99882;
+    background-color: #D9AAA0;
     padding: 10px;
     border-radius: 10px;
+    color: #6e413d;
 }
 
 .place-cards a {

@@ -25,23 +25,23 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.wrapper .class-header {
+.wrapper section {
     display: flex;
     align-items: center;
     padding: 25px 30px 10px;
     justify-content: space-between;
 }
 
-.class-header .current-date {
+section .current-date {
     font-size: 1.45rem;
     font-weight: 500;
 }
 
-.class-header .icons {
+section .icons {
     display: flex;
 }
 
-.class-header .icons span {
+section .icons span {
     height: 38px;
     width: 38px;
     color: #F2E0D4;
@@ -51,16 +51,15 @@ body {
     text-align: center;
     line-height: 38px;
     border-radius: 50%;
-    /* background: #F2E0D4; */
     user-select: none;
 }
 
-.class-header .icons span:hover {
+section .icons span:hover {
     color: #D9AAA0;
     background: #F2E0D4;
 }
 
-.class-header .icons span:last-child {
+section .icons span:last-child {
     margin-right: -10px;
 }
 
@@ -73,14 +72,6 @@ body {
     flex-wrap: wrap;
     list-style: none;
     text-align: center;
-}
-
-.calendar .days {
-    margin-bottom: 20px;
-}
-
-.days li.inactive {
-    color: #F2E0D4;
 }
 
 .calendar .weeks li {
@@ -121,6 +112,46 @@ body {
 
 .days li.active:hover {
     color: #D9AAA0;
+}
+
+.days li.active::before {
+    background: #F2E0D4;
+}
+
+.days li.inactive {
+    color: #F2E0D4;
+}
+
+/* Highlight days with tasks */
+.days li.has-task::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 2px solid #F2E0D4;
+    border-radius: 50%;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.days li::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: #D9AAA0;
+}
+
+.days li:hover::before {
+    background: #999eae;
 }
 
 .days li.active::before {

@@ -29,7 +29,7 @@
       <button id="clear"><i class="fa fa-undo"></i></button>
     </div>
   </div>
-
+  <div style="width:0px;position:relative;"><video autoplay="" src="https://user-uploads.perchance.org/file/da1bf91d3531f0c92e59e6db38e44176.webm" style="max-width: 7rem;position:absolute;top: -1.6rem;left: -1.8rem;z-index: -1;" muted="" loop=""></video></div>
   <script src="../JS/pomodoro.view.js"></script>
 </body>
 </html>

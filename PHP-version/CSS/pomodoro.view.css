@@ -18,8 +18,10 @@ body {
 }
 
 .allin {
-    background-color: #D9D9D9;
+    background-color: #D9AAA0;
     padding: 20px;
+    border-radius: 1rem;
+    /* Adjust the value as needed for the desired roundness */
 }
 
 .timer-container {

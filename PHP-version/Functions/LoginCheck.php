@@ -1,6 +1,7 @@
 <?php
-
-if (!isset($_POST['']) || empty($_POST['']))
+// (!isset($_COOKIE['']) || empty($_COOKIE['']))
+if (TRUE)
 {
-    header('Location: /');
+    header("Location: /");
+    exit;
 }

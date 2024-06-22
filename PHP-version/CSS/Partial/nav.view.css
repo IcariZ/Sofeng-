@@ -4,7 +4,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    /* background: #caced1; */
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,8 +20,11 @@ header {
     letter-spacing: 4px;
 }
 
-.navigation {
-    padding: 13px;
+.currentPage {
+    background-color: #F2E0D4;
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 .navigation a {
@@ -33,7 +36,7 @@ header {
     font-weight: 500;
     /* ini kea bold gitu */
     margin-left: 40px;
-    padding: auto;
+    color: #6e413d;
 }
 
 .navigation a::after {
@@ -54,35 +57,24 @@ header {
 }
 
 .navigation a:hover::after {
+    /* abis selesai hover */
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.fix-underline
-{
-    content: '';
-    position: absolute;
-    left: 0px;
-    bottom: -10px;
-    width: 100%;
-    /* biar width underlinenya sama kea wordnya */
-    height: 3px;
-    background: #D9AAA0;
-    border-radius: 5px;
-    /* ada underline dibawah nav, matiin biar kliatan */
-    /* uat set effectnya itu */
+.navigation a.currentPage {
+    font-weight: 700;
 }
 
-.navigation button {
-    position: relative;
-    font-size: 1.1em;
-    /* color: white; */
-    text-decoration: none;
-    /* biar gada underline */
-    font-weight: 500;
-    /* ini kea bold gitu */
-    margin-left: 40px;
-    background-color: grey;
+.navigation a.currentPage::after {
+    content: none;
+}
+
+
+#eyeIconElement,
+#reg_eyeIconElement,
+#confirm_eyeIconElement {
+    cursor: pointer;
 }
 
 .navigation .btnLogin-popup {
@@ -103,9 +95,19 @@ header {
     border: #D9AAA0;
 }
 
-
-
-
+.fix-underline {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    width: 100%;
+    /* biar width underlinenya sama kea wordnya */
+    height: 3px;
+    background: #D9AAA0;
+    border-radius: 5px;
+    /* ada underline dibawah nav, matiin biar kliatan */
+    /* uat set effectnya itu */
+}
 
 
 

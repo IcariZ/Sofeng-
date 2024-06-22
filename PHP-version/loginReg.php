@@ -1,4 +1,3 @@
 <?php
 
-require "View/index.view.php";
-
+require "View/loginReg.view.php";

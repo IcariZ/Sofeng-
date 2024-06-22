@@ -1,48 +1,91 @@
 <!DOCTYPE html>
 <html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../CSS/home.view.css">
-        
-        <title>To Do!</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/home.view.css">
+    <title>toroo</title>
+</head>
     <body>
         
         <?php require "Partial/nav.view.php";?>
 
         <br><br><br><br><br><br><br><br><br><br>
-        <h3 style="text-align: center;">Weekly Analysis</h3>
-        <br>
+    <h3 style="text-align: center;">Let's Get Productive!</h3>
+    <br>
 
-        <div class="weekly">
-            <div class="box" id="completed">
-                <p>Completed</p>
-                <p>9</p>
-            </div>
-            <div class="box" id="inProgress">
-                <p>In Progress</p>
-                <p>4</p>
-            </div>
-            <div class="box" id="Overdue">
-                <p>Overdue</p>
-                <p>0</p>
+    <div class="weekly">
+        <div class="box" id="completed">
+            <p>Completed</p>
+            <p id="completedCount">0</p>
+        </div>
+        <div class="box" id="inProgress">
+            <p>In Progress</p>
+            <p id="inProgressCount">0</p>
+        </div>
+        <div class="box" id="overdue">
+            <p>Overdue</p>
+            <p id="overdueCount">0</p>
+        </div>
+    </div>
+    <br><br><br><br>
+
+    <div class="container">
+        <div class="toDoApp">
+            <h3>To Do List</h3>
+            <div class="row">
+                <input type="text" id="inputBox" placeholder="Add New Task">
+                <input type="date" id="deadline" placeholder="Add Deadline">
+                <button class="addButton" onclick="addTask()">Add</button>
             </div>
         </div>
-        <br><br><br><br>
-        
-        <div class="container">
-            <div class="toDoApp">
-                <h3>To Do List</h3>
-                <div class="row">
-                    <input type="text" id="inputBox" placeholder="Add New Task">
-                    <button onclick="addTask()">Add</button>
-                </div>
-            </div>
-            <ul id="listContainer"></ul>
-        </div>
+        <ul id="listContainer"></ul>
+    </div>
 
+    <script src='../JS/home.view.js'></script>
+    <!-- Ionicons scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        // eye icon for password
+        let eyeIcon = document.getElementById("eyeIconElement");
+        let password = document.getElementById("password");
     
-        <script src='../JS/home.view.js'></script>
-    </body>
+        eyeIcon.onclick = function() {
+            if (password.type === "password") {
+                password.type = "text";
+                eyeIcon.setAttribute("name", "eye-outline");
+            } else {
+                password.type = "password";
+                eyeIcon.setAttribute("name", "eye-off-outline");
+            }
+        }
+
+        let reg_eyeIcone = document.getElementById("reg_eyeIconElement");
+        let reg_password= document.getElementById("reg_password");
+    
+        reg_eyeIcone.onclick = function() {
+            if (reg_password.type === "password") {
+                reg_password.type = "text";
+                reg_eyeIcone.setAttribute("name", "eye-outline");
+            } else {
+                reg_password.type = "password";
+                reg_eyeIcone.setAttribute("name", "eye-off-outline");
+            }
+        }
+
+        let con_eyeIcone = document.getElementById("confirm_eyeIconElement");
+        let conf_password = document.getElementById("conf_password");
+    
+        confirm_eyeIconElement.onclick = function() {
+            if (conf_password.type === "password") {
+                conf_password.type = "text";
+                confirm_eyeIconElement.setAttribute("name", "eye-outline");
+            } else {
+                conf_password.type = "password";
+                confirm_eyeIconElement.setAttribute("name", "eye-off-outline");
+            }
+        }
+    </script>
+</body>
 </html>

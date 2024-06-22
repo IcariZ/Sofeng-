@@ -1,8 +1,20 @@
+
+document.getElementById('home').addEventListener('click', showAlert);
+document.getElementById('calendar').addEventListener('click', showAlert);
+document.getElementById('pomodoro').addEventListener('click', showAlert);
+document.getElementById('weeklyAnalysis').addEventListener('click', showAlert);
+document.getElementById('recommendations').addEventListener('click', showAlert);
+
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const btnPopUp = document.querySelector('.btnLogin-popup');
 const iconClose = document.querySelector('.icon-close');
+
+function showAlert(event) {
+    event.preventDefault();
+    alert('Please Log In / Sign Up to access this page');
+}
 
 registerLink.addEventListener('click', () => {
     wrapper.classList.add('active');
@@ -20,13 +32,11 @@ iconClose.addEventListener('click', () => {
     wrapper.classList.remove('active-popup');
 });
 
-// localStorage.clear();
-
-// for(var i=0, len=localStorage.length; i<len; i++) {
-//     var key = localStorage.key(i);
-//     var value = localStorage[key];
-//     console.log(key + " => " + value);
-// }
+function obfuscateString(str) {
+    const buffer = Buffer.from(str);
+    const base64 = buffer.toString('base64');
+    return base64;
+}
 
 function signup(e) {
     event.preventDefault();
@@ -55,6 +65,7 @@ function loginFunc(e) {
     var user = localStorage.getItem(email);
     var data = JSON.parse(user);
 
+    document.cookie = obfuscateString(data);
     if (user == null) {
         result.innerHTML = 'Oops! Invalid crendetials! Try again.';
     } else if (email == data.email && pass == data.password) {
