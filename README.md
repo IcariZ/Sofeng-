@@ -10,3 +10,11 @@ Future:
 - hapus page weeklyanalysis
 - routing
 - login+cookie
+------------------
+
+22/06/2024
+
+Done:
+- routing
+- cookie
+- weeklyanalysis 
